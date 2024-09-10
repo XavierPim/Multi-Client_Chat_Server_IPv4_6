@@ -1,0 +1,1 @@
+-faddrsig -fno-sanitize-ignorelist -fno-sanitize-recover=all -fsanitize-trap=all -fsanitize=unreachable -fstack-check -fstack-protector -fstack-protector-all -fstack-protector-strong -ftls-model=global-dynamic -funique-internal-linkage-names

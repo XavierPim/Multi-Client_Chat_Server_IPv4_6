@@ -1,0 +1,1 @@
+-fno-fast-math -fstrict-float-cast-overflow -fmath-errno -ftrapping-math -fhonor-infinities -fhonor-nans -fsigned-zeros -fno-associative-math -fno-reciprocal-math -fno-unsafe-math-optimizations -frounding-math -ffp-model=strict -ffp-exception-behavior=strict -ffp-eval-method=source -fprotect-parens

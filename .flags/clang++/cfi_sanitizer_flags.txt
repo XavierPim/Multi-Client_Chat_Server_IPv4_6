@@ -1,0 +1,1 @@
+-fsanitize-cfi-cross-dso

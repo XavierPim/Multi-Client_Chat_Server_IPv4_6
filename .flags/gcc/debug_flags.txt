@@ -1,0 +1,1 @@
+-g -g3 -ggdb -ggdb3 -gpubnames -ggnu-pubnames -grecord-gcc-switches -gcolumn-info -glldb -fno-discard-value-names
