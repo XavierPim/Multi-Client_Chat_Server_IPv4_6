@@ -1,2 +1,2 @@
-    server src/server.c
-    client src/client.c
+wrapper src/wrapper.c src/server.c include/server.h include/protocol.h src/protocol.c
+client src/client.c

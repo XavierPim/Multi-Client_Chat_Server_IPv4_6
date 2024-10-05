@@ -9,6 +9,10 @@ Role: Team 3 - Server
 3) ./change-compiler.sh -c [gcc or clang]
 4) ./build.sh
 
+#GCC 
+gcc -Iinclude src/server.c src/wrapper.c -o server
+gcc -Iinclude src/client.c -o client
+
 
 # Run
 1) ./server [ip address] [port]

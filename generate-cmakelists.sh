@@ -213,7 +213,7 @@ echo "" >> "$output_file"
   echo "endif()" >> "$output_file"
   echo "" >> "$output_file"
 
-  # Common compiler .flags
+  # Common compiler flags
   echo "set(STANDARD_FLAGS" >> "$output_file"
   echo "    -D_POSIX_C_SOURCE=200809L" >> "$output_file"
   echo "    -D_XOPEN_SOURCE=700" >> "$output_file"
@@ -230,7 +230,7 @@ echo "" >> "$output_file"
 
   # Loop through targets and set compile options and libraries
   for target in "${targets[@]}"; do
-    # Set compiler .flags for the target
+    # Set compiler flags for the target
     echo "# Set compiler flags for the target $target" >> "$output_file"
     echo "target_compile_options($target PRIVATE" >> "$output_file"
     echo "    \${STANDARD_FLAGS}" >> "$output_file"

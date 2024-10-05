@@ -60,10 +60,10 @@ if [ ! -f "supported_c_compilers.txt" ] || ! grep -Fxq "$c_compiler" supported_c
 fi
 
 if [ ! -d "./.flags/$c_compiler" ]; then
-    ./generate-.flags.sh
+    ./generate-flags.sh
 fi
 
-# Split the sanitizers string and construct .flags
+# Split the sanitizers string and construct flags
 IFS=',' read -ra SANITIZERS <<< "$sanitizers"
 for sanitizer in "${SANITIZERS[@]}"; do
     sanitizer_flags+="-DSANITIZER_${sanitizer}=ON "

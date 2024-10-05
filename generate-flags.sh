@@ -32,12 +32,12 @@ is_flag_supported()
 
     local extra_flags=""
 
-    # If the compiler is Clang, set the extra .flags
+    # If the compiler is Clang, set the extra flags
     if [[ "$compiler" == clang* ]]; then
         extra_flags="-Winvalid-command-line-argument -Wunused-command-line-argument"
     fi
 
-    # Check if the flag is supported by the compiler, including extra .flags if set
+    # Check if the flag is supported by the compiler, including extra flags if set
     if ("$compiler" "$flag" $extra_flags -Werror -E - < /dev/null &> /dev/null); then
         echo "Flag '$flag' is supported by $compiler."
         eval "$supported_flags_ref+=('$flag')"
@@ -46,20 +46,20 @@ is_flag_supported()
     fi
 }
 
-# Function to process compiler .flags
+# Function to process compiler flags
 process_compiler_flags()
 {
     local compiler="$1"
     local category="$2"
     shift 2
-    local .flags=("$@")
+    local flags=("$@")
     local supported_flags=()
 
-    for flag in "${.flags[@]}"; do
+    for flag in "${flags[@]}"; do
         is_flag_supported "$compiler" "$flag" supported_flags
     done
 
-    # Concatenate the .flags
+    # Concatenate the flags
     local flags_string
     flags_string=$(IFS=" "; echo "${supported_flags[*]}")
 
@@ -80,14 +80,14 @@ process_sanitizer_category()
     # Check the first flag
     is_flag_supported "$compiler" "${flags_array[0]}" supported_flags
 
-    # Then, check the rest of the .flags
+    # Then, check the rest of the flags
     for i in "${!flags_array[@]}"; do
         if [[ $i -ne 0 ]]; then  # Skip the first element
             is_flag_supported "$compiler" "${flags_array[$i]}" supported_flags
         fi
     done
 
-    # Concatenate the supported .flags
+    # Concatenate the supported flags
     local flags_string
     flags_string=$(IFS=" "; echo "${supported_flags[*]}")
 
